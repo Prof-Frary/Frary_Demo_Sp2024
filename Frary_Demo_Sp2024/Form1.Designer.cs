@@ -41,7 +41,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(57, 66);
+            label1.Location = new Point(231, 44);
             label1.Name = "label1";
             label1.Size = new Size(80, 15);
             label1.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             // txtWidgetName
             // 
-            txtWidgetName.Location = new Point(152, 63);
+            txtWidgetName.Location = new Point(326, 41);
             txtWidgetName.Name = "txtWidgetName";
             txtWidgetName.Size = new Size(100, 23);
             txtWidgetName.TabIndex = 1;
@@ -57,7 +57,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(55, 116);
+            label2.Location = new Point(229, 94);
             label2.Name = "label2";
             label2.Size = new Size(74, 15);
             label2.TabIndex = 2;
@@ -65,7 +65,7 @@
             // 
             // txtWidgetPrice
             // 
-            txtWidgetPrice.Location = new Point(152, 116);
+            txtWidgetPrice.Location = new Point(326, 94);
             txtWidgetPrice.Name = "txtWidgetPrice";
             txtWidgetPrice.Size = new Size(100, 23);
             txtWidgetPrice.TabIndex = 3;
@@ -74,7 +74,7 @@
             // 
             lstOut.FormattingEnabled = true;
             lstOut.ItemHeight = 15;
-            lstOut.Location = new Point(57, 189);
+            lstOut.Location = new Point(59, 159);
             lstOut.Name = "lstOut";
             lstOut.Size = new Size(548, 154);
             lstOut.TabIndex = 4;
@@ -82,7 +82,7 @@
             // 
             // btnCalc
             // 
-            btnCalc.Location = new Point(57, 362);
+            btnCalc.Location = new Point(59, 332);
             btnCalc.Name = "btnCalc";
             btnCalc.Size = new Size(75, 48);
             btnCalc.TabIndex = 5;
@@ -91,7 +91,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(302, 362);
+            btnClear.Location = new Point(304, 332);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(75, 48);
             btnClear.TabIndex = 6;
@@ -100,7 +100,7 @@
             // 
             // btnQuit
             // 
-            btnQuit.Location = new Point(530, 362);
+            btnQuit.Location = new Point(532, 332);
             btnQuit.Name = "btnQuit";
             btnQuit.Size = new Size(75, 48);
             btnQuit.TabIndex = 7;
@@ -111,7 +111,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(676, 411);
             Controls.Add(btnQuit);
             Controls.Add(btnClear);
             Controls.Add(btnCalc);
