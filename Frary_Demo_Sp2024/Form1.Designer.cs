@@ -88,24 +88,27 @@
             btnCalc.TabIndex = 5;
             btnCalc.Text = "Calculate &Price";
             btnCalc.UseVisualStyleBackColor = true;
+            btnCalc.Click += btnCalc_Click;
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(304, 332);
+            btnClear.Location = new Point(246, 332);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(75, 48);
             btnClear.TabIndex = 6;
             btnClear.Text = "&Clear";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnQuit
             // 
-            btnQuit.Location = new Point(532, 332);
+            btnQuit.Location = new Point(420, 332);
             btnQuit.Name = "btnQuit";
             btnQuit.Size = new Size(75, 48);
             btnQuit.TabIndex = 7;
             btnQuit.Text = "&Quit";
             btnQuit.UseVisualStyleBackColor = true;
+            btnQuit.Click += btnQuit_Click;
             // 
             // Form1
             // 
