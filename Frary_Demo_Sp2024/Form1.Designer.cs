@@ -53,6 +53,8 @@
             txtWidgetName.Name = "txtWidgetName";
             txtWidgetName.Size = new Size(100, 23);
             txtWidgetName.TabIndex = 1;
+            txtWidgetName.Enter += txtWidgetName_Enter;
+            txtWidgetName.Leave += txtWidgetName_Leave;
             // 
             // label2
             // 
@@ -69,6 +71,8 @@
             txtWidgetPrice.Name = "txtWidgetPrice";
             txtWidgetPrice.Size = new Size(100, 23);
             txtWidgetPrice.TabIndex = 3;
+            txtWidgetPrice.Enter += txtWidgetPrice_Enter;
+            txtWidgetPrice.Leave += txtWidgetPrice_Leave;
             // 
             // lstOut
             // 

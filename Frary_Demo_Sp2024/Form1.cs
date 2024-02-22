@@ -21,6 +21,9 @@ namespace Frary_Demo_Sp2024
             txtWidgetName.Clear();
             txtWidgetPrice.Clear();
             lstOut.Items.Clear();
+            //changes the focus to the First textbox
+            txtWidgetName.Focus();
+
 
         }
 
@@ -50,12 +53,34 @@ namespace Frary_Demo_Sp2024
             TotalPrice = WidgetPrice + TaxAmount;
 
             //output
-            lstOut.Items.Add("You bought " +  WidgetName);
+            lstOut.Items.Add("You bought " + WidgetName);
             lstOut.Items.Add("The price was " + WidgetPrice.ToString("C"));
             lstOut.Items.Add("The tax was " + TaxAmount.ToString("C") + " (" + taxRate.ToString("P") + " )");
             lstOut.Items.Add(" Your total is " + TotalPrice.ToString("C"));
+            // changes the focus to the clear button
+            btnClear.Focus();
 
+        }
+        //non default event procedure
+        private void txtWidgetName_Enter(object sender, EventArgs e)
+        {
+            txtWidgetName.BackColor = Color.Beige;
+        }
 
+        private void txtWidgetName_Leave(object sender, EventArgs e)
+        {
+            txtWidgetName.BackColor = SystemColors.Window;
+
+        }
+
+        private void txtWidgetPrice_Leave(object sender, EventArgs e)
+        {
+            txtWidgetPrice.BackColor = SystemColors.Window;
+        }
+
+        private void txtWidgetPrice_Enter(object sender, EventArgs e)
+        {
+            txtWidgetPrice.BackColor = Color.Beige;
         }
     }
 }
