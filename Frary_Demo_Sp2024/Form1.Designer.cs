@@ -76,8 +76,9 @@
             // 
             // lstOut
             // 
+            lstOut.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lstOut.FormattingEnabled = true;
-            lstOut.ItemHeight = 15;
+            lstOut.ItemHeight = 25;
             lstOut.Location = new Point(59, 159);
             lstOut.Name = "lstOut";
             lstOut.Size = new Size(548, 154);
