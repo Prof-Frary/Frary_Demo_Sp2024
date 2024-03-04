@@ -36,12 +36,17 @@
             btnCalc = new Button();
             btnClear = new Button();
             btnQuit = new Button();
+            groupBox1 = new GroupBox();
+            rdo4Year = new RadioButton();
+            rdo2Year = new RadioButton();
+            rdoNoWarranty = new RadioButton();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(231, 44);
+            label1.Location = new Point(218, 78);
             label1.Name = "label1";
             label1.Size = new Size(80, 15);
             label1.TabIndex = 0;
@@ -49,7 +54,7 @@
             // 
             // txtWidgetName
             // 
-            txtWidgetName.Location = new Point(326, 41);
+            txtWidgetName.Location = new Point(313, 75);
             txtWidgetName.Name = "txtWidgetName";
             txtWidgetName.Size = new Size(100, 23);
             txtWidgetName.TabIndex = 1;
@@ -59,7 +64,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(229, 94);
+            label2.Location = new Point(216, 128);
             label2.Name = "label2";
             label2.Size = new Size(74, 15);
             label2.TabIndex = 2;
@@ -67,7 +72,7 @@
             // 
             // txtWidgetPrice
             // 
-            txtWidgetPrice.Location = new Point(326, 94);
+            txtWidgetPrice.Location = new Point(313, 128);
             txtWidgetPrice.Name = "txtWidgetPrice";
             txtWidgetPrice.Size = new Size(100, 23);
             txtWidgetPrice.TabIndex = 3;
@@ -79,9 +84,9 @@
             lstOut.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lstOut.FormattingEnabled = true;
             lstOut.ItemHeight = 25;
-            lstOut.Location = new Point(59, 159);
+            lstOut.Location = new Point(12, 159);
             lstOut.Name = "lstOut";
-            lstOut.Size = new Size(548, 154);
+            lstOut.Size = new Size(652, 154);
             lstOut.TabIndex = 4;
             lstOut.TabStop = false;
             // 
@@ -97,7 +102,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(246, 332);
+            btnClear.Location = new Point(313, 332);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(75, 48);
             btnClear.TabIndex = 6;
@@ -107,7 +112,7 @@
             // 
             // btnQuit
             // 
-            btnQuit.Location = new Point(420, 332);
+            btnQuit.Location = new Point(572, 332);
             btnQuit.Name = "btnQuit";
             btnQuit.Size = new Size(75, 48);
             btnQuit.TabIndex = 7;
@@ -115,11 +120,61 @@
             btnQuit.UseVisualStyleBackColor = true;
             btnQuit.Click += btnQuit_Click;
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(rdo4Year);
+            groupBox1.Controls.Add(rdo2Year);
+            groupBox1.Controls.Add(rdoNoWarranty);
+            groupBox1.Location = new Point(12, 12);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(652, 57);
+            groupBox1.TabIndex = 8;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Warranty Type";
+            // 
+            // rdo4Year
+            // 
+            rdo4Year.AutoSize = true;
+            rdo4Year.Location = new Point(577, 22);
+            rdo4Year.Name = "rdo4Year";
+            rdo4Year.Size = new Size(58, 19);
+            rdo4Year.TabIndex = 2;
+            rdo4Year.TabStop = true;
+            rdo4Year.Text = "4-Year";
+            rdo4Year.UseVisualStyleBackColor = true;
+            rdo4Year.CheckedChanged += rdo4Year_CheckedChanged;
+            // 
+            // rdo2Year
+            // 
+            rdo2Year.AutoSize = true;
+            rdo2Year.BackColor = SystemColors.Control;
+            rdo2Year.Location = new Point(309, 22);
+            rdo2Year.Name = "rdo2Year";
+            rdo2Year.Size = new Size(58, 19);
+            rdo2Year.TabIndex = 1;
+            rdo2Year.TabStop = true;
+            rdo2Year.Text = "2-Year";
+            rdo2Year.UseVisualStyleBackColor = false;
+            rdo2Year.CheckedChanged += rdo2Year_CheckedChanged;
+            // 
+            // rdoNoWarranty
+            // 
+            rdoNoWarranty.AutoSize = true;
+            rdoNoWarranty.Location = new Point(45, 27);
+            rdoNoWarranty.Name = "rdoNoWarranty";
+            rdoNoWarranty.Size = new Size(54, 19);
+            rdoNoWarranty.TabIndex = 0;
+            rdoNoWarranty.TabStop = true;
+            rdoNoWarranty.Text = "None";
+            rdoNoWarranty.UseVisualStyleBackColor = true;
+            rdoNoWarranty.CheckedChanged += rdoNoWarranty_CheckedChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(676, 411);
+            Controls.Add(groupBox1);
             Controls.Add(btnQuit);
             Controls.Add(btnClear);
             Controls.Add(btnCalc);
@@ -131,6 +186,8 @@
             Name = "Form1";
             Text = "Frary Demo SP 24";
             Load += Form1_Load;
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -145,5 +202,9 @@
         private Button btnCalc;
         private Button btnClear;
         private Button btnQuit;
+        private GroupBox groupBox1;
+        private RadioButton rdo4Year;
+        private RadioButton rdo2Year;
+        private RadioButton rdoNoWarranty;
     }
 }

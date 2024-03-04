@@ -9,9 +9,11 @@ namespace Frary_Demo_Sp2024
             InitializeComponent();
         }
 
+        // double WarrantyPct;
+        string WarrantyType;
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            rdoNoWarranty.Checked = true;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -31,7 +33,7 @@ namespace Frary_Demo_Sp2024
         {
             //ica 5
             DialogResult ButtonSelected;
-            ButtonSelected = MessageBox.Show("Are you sure you want to exit?", 
+            ButtonSelected = MessageBox.Show("Are you sure you want to exit?",
                                                "Exiting...",
                                                MessageBoxButtons.YesNo,
                                                MessageBoxIcon.Question);
@@ -49,6 +51,8 @@ namespace Frary_Demo_Sp2024
             double WidgetPrice;
             double TotalPrice, TaxAmount;
 
+
+
             double taxRate = .0875;
             //ICA 4
             bool wPriceValid;
@@ -63,7 +67,7 @@ namespace Frary_Demo_Sp2024
 
             //ica5
             // only do regular processing if the value(s) are good
-            if (wPriceValid )
+            if (wPriceValid)
             {
 
                 //ICA 3 part 2
@@ -78,7 +82,8 @@ namespace Frary_Demo_Sp2024
                 lstOut.Items.Add(" Your total is " + TotalPrice.ToString("C"));
                 // changes the focus to the clear button
                 btnClear.Focus();
-            } else  // Error processing - ica 5
+            }
+            else  // Error processing - ica 5
             {
                 lstOut.Items.Add("The Widget Price entered is not valid");
             }
@@ -105,6 +110,31 @@ namespace Frary_Demo_Sp2024
         private void txtWidgetPrice_Enter(object sender, EventArgs e)
         {
             txtWidgetPrice.BackColor = Color.Beige;
+        }
+
+        private void rdoNoWarranty_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoNoWarranty.Checked)
+            {
+                WarrantyType = "None";
+            }
+
+        }
+
+        private void rdo2Year_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdo2Year.Checked)
+            {
+                WarrantyType = "2-Year";
+            }
+        }
+
+        private void rdo4Year_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rdo4Year.Checked)
+            {
+                WarrantyType = "4-Year";
+            }
         }
     }
 }
