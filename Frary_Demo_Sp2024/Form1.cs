@@ -1,3 +1,4 @@
+using System.Diagnostics.Eventing.Reader;
 using System.Windows.Forms.Design;
 
 namespace Frary_Demo_Sp2024
@@ -11,6 +12,9 @@ namespace Frary_Demo_Sp2024
 
         // double WarrantyPct;
         string WarrantyType;
+        const string NO_WARRANTY = "None";
+        const string TWO_YEAR_WARRANTY = "2-Year";
+        const string FOUR_YEAR_WARRANTY = "4-Year";
         private void Form1_Load(object sender, EventArgs e)
         {
             rdoNoWarranty.Checked = true;
@@ -50,12 +54,13 @@ namespace Frary_Demo_Sp2024
             string WidgetName;
             double WidgetPrice;
             double TotalPrice, TaxAmount;
-
-
+            double WarrantyPct = 0;
+            double WarrantyAmt = 0;
+            int Quantity = 0;
 
             double taxRate = .0875;
             //ICA 4
-            bool wPriceValid;
+            bool wPriceValid, QuantityValid;
 
             //input 
 
@@ -64,21 +69,70 @@ namespace Frary_Demo_Sp2024
             // ica 4
             //WidgetPrice = double.Parse(txtWidgetPrice.Text);
             wPriceValid = double.TryParse(txtWidgetPrice.Text, out WidgetPrice);
+            QuantityValid = int.TryParse(txtQuantity.Text, out Quantity);
+           
 
             //ica5
             // only do regular processing if the value(s) are good
             if (wPriceValid)
             {
+                switch (WarrantyType)
+                {
+                    case NO_WARRANTY:
+                        WarrantyPct = 0;
+                        break;
+                    case TWO_YEAR_WARRANTY:
+                        WarrantyPct = .02;
+                        break;
+                    case FOUR_YEAR_WARRANTY:
+                        WarrantyPct = .05;
+                        break;
+                    default:
+                        lstOut.Items.Add(" Switch default - this shouldn't happen!!!");
+                        break;
+                }
+
+
+               
+                switch (Quantity)
+                {
+                    // advanced topic fyi not required
+                    case int n when (n >= 0 && n < 20):
+                           // discount = 0;
+                        break;
+                    // if you want multiple cases to run the same code
+                    // don't put break in
+                    case 0:
+                        //could put code here
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                        // discount = 0;
+                        break;
+
+
+
+
+
+                }
 
                 //ICA 3 part 2
                 //processing
-                TaxAmount = WidgetPrice * taxRate;
+                WarrantyAmt = WidgetPrice * WarrantyPct;
+                TaxAmount = (WidgetPrice + WarrantyAmt) * taxRate;
                 TotalPrice = WidgetPrice + TaxAmount;
 
                 //output
                 lstOut.Items.Add("You bought " + WidgetName);
                 lstOut.Items.Add("The price was " + WidgetPrice.ToString("C"));
-                lstOut.Items.Add("The tax was " + TaxAmount.ToString("C") + " (" + taxRate.ToString("P") + " )");
+                lstOut.Items.Add("The warranty type is " + WarrantyType);
+                lstOut.Items.Add("The warranty Percent is " + WarrantyPct.ToString("P"));
+                lstOut.Items.Add(" The waranty amount charged is " + WarrantyAmt.ToString("C"));
+
+
+              lstOut.Items.Add("The tax was " + TaxAmount.ToString("C") + " (" + taxRate.ToString("P") + " )");
                 lstOut.Items.Add(" Your total is " + TotalPrice.ToString("C"));
                 // changes the focus to the clear button
                 btnClear.Focus();
@@ -116,7 +170,7 @@ namespace Frary_Demo_Sp2024
         {
             if (rdoNoWarranty.Checked)
             {
-                WarrantyType = "None";
+                WarrantyType = NO_WARRANTY;
             }
 
         }
@@ -125,7 +179,7 @@ namespace Frary_Demo_Sp2024
         {
             if (rdo2Year.Checked)
             {
-                WarrantyType = "2-Year";
+                WarrantyType = TWO_YEAR_WARRANTY;
             }
         }
 
@@ -133,7 +187,7 @@ namespace Frary_Demo_Sp2024
         {
             if(rdo4Year.Checked)
             {
-                WarrantyType = "4-Year";
+                WarrantyType = FOUR_YEAR_WARRANTY;
             }
         }
     }

@@ -40,6 +40,8 @@
             rdo4Year = new RadioButton();
             rdo2Year = new RadioButton();
             rdoNoWarranty = new RadioButton();
+            txtQuantity = new TextBox();
+            label3 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -84,7 +86,7 @@
             lstOut.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lstOut.FormattingEnabled = true;
             lstOut.ItemHeight = 25;
-            lstOut.Location = new Point(12, 159);
+            lstOut.Location = new Point(12, 191);
             lstOut.Name = "lstOut";
             lstOut.Size = new Size(652, 154);
             lstOut.TabIndex = 4;
@@ -92,7 +94,7 @@
             // 
             // btnCalc
             // 
-            btnCalc.Location = new Point(59, 332);
+            btnCalc.Location = new Point(57, 351);
             btnCalc.Name = "btnCalc";
             btnCalc.Size = new Size(75, 48);
             btnCalc.TabIndex = 5;
@@ -102,7 +104,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(313, 332);
+            btnClear.Location = new Point(313, 351);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(75, 48);
             btnClear.TabIndex = 6;
@@ -112,7 +114,7 @@
             // 
             // btnQuit
             // 
-            btnQuit.Location = new Point(572, 332);
+            btnQuit.Location = new Point(572, 351);
             btnQuit.Name = "btnQuit";
             btnQuit.Size = new Size(75, 48);
             btnQuit.TabIndex = 7;
@@ -169,11 +171,29 @@
             rdoNoWarranty.UseVisualStyleBackColor = true;
             rdoNoWarranty.CheckedChanged += rdoNoWarranty_CheckedChanged;
             // 
+            // txtQuantity
+            // 
+            txtQuantity.Location = new Point(315, 159);
+            txtQuantity.Name = "txtQuantity";
+            txtQuantity.Size = new Size(100, 23);
+            txtQuantity.TabIndex = 10;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(218, 159);
+            label3.Name = "label3";
+            label3.Size = new Size(53, 15);
+            label3.TabIndex = 9;
+            label3.Text = "Quantity";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(676, 411);
+            Controls.Add(txtQuantity);
+            Controls.Add(label3);
             Controls.Add(groupBox1);
             Controls.Add(btnQuit);
             Controls.Add(btnClear);
@@ -206,5 +226,7 @@
         private RadioButton rdo4Year;
         private RadioButton rdo2Year;
         private RadioButton rdoNoWarranty;
+        private TextBox txtQuantity;
+        private Label label3;
     }
 }
