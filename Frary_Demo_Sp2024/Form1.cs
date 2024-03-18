@@ -10,11 +10,16 @@ namespace Frary_Demo_Sp2024
             InitializeComponent();
         }
 
-        // double WarrantyPct;
+        // these are class level variables
         string WarrantyType;
         const string NO_WARRANTY = "None";
         const string TWO_YEAR_WARRANTY = "2-Year";
         const string FOUR_YEAR_WARRANTY = "4-Year";
+        double twoYearRate = 0.02;
+        double fourYearRate = 0.05;
+        double noneRate = 0.0;
+        string WidgetTranasctionsFile = "WidgetLog.txt";
+
         private void Form1_Load(object sender, EventArgs e)
         {
             rdoNoWarranty.Checked = true;
@@ -70,7 +75,7 @@ namespace Frary_Demo_Sp2024
             //WidgetPrice = double.Parse(txtWidgetPrice.Text);
             wPriceValid = double.TryParse(txtWidgetPrice.Text, out WidgetPrice);
             QuantityValid = int.TryParse(txtQuantity.Text, out Quantity);
-           
+
 
             //ica5
             // only do regular processing if the value(s) are good
@@ -79,13 +84,13 @@ namespace Frary_Demo_Sp2024
                 switch (WarrantyType)
                 {
                     case NO_WARRANTY:
-                        WarrantyPct = 0;
+                        WarrantyPct = noneRate;
                         break;
                     case TWO_YEAR_WARRANTY:
-                        WarrantyPct = .02;
+                        WarrantyPct = twoYearRate;
                         break;
                     case FOUR_YEAR_WARRANTY:
-                        WarrantyPct = .05;
+                        WarrantyPct = fourYearRate;
                         break;
                     default:
                         lstOut.Items.Add(" Switch default - this shouldn't happen!!!");
@@ -93,17 +98,17 @@ namespace Frary_Demo_Sp2024
                 }
 
 
-               
+
                 switch (Quantity)
                 {
                     // advanced topic fyi not required
                     case int n when (n >= 0 && n < 20):
-                           // discount = 0;
+                        // discount = 0;
                         break;
                     // if you want multiple cases to run the same code
                     // don't put break in
                     case 0:
-                        //could put code here
+                    //could put code here
                     case 1:
                     case 2:
                     case 3:
@@ -111,11 +116,6 @@ namespace Frary_Demo_Sp2024
                     case 5:
                         // discount = 0;
                         break;
-
-
-
-
-
                 }
 
                 //ICA 3 part 2
@@ -126,14 +126,26 @@ namespace Frary_Demo_Sp2024
 
                 //output
                 lstOut.Items.Add("You bought " + WidgetName);
-                lstOut.Items.Add("The price was " + WidgetPrice.ToString("C"));
+                lstOut.Items.Add("The price is " + WidgetPrice.ToString("C"));
                 lstOut.Items.Add("The warranty type is " + WarrantyType);
-                lstOut.Items.Add("The warranty Percent is " + WarrantyPct.ToString("P"));
-                lstOut.Items.Add(" The waranty amount charged is " + WarrantyAmt.ToString("C"));
+                lstOut.Items.Add("The warranty percent is " + WarrantyPct.ToString("P"));
+                lstOut.Items.Add("The warranty amount charged is " + WarrantyAmt.ToString("C"));
+                lstOut.Items.Add("The tax is " + TaxAmount.ToString("C") + " (" + taxRate.ToString("P") + " )");
+                lstOut.Items.Add("Your total is " + TotalPrice.ToString("C"));
+                StreamWriter swLog;
+                swLog = File.AppendText(WidgetTranasctionsFile);
+                DateTime d = DateTime.Now;
+                swLog.WriteLine("************** Beginning of Transaction on " +
+                        d.ToString("G") + "***********");
+                swLog.WriteLine("You bought " + WidgetName);
+                swLog.WriteLine("The price is " + WidgetPrice.ToString("C"));
+                swLog.WriteLine("The warranty type is " + WarrantyType);
+                swLog.WriteLine("The warranty percent is " + WarrantyPct.ToString("P"));
+                swLog.WriteLine("The waranty amount charged is " + WarrantyAmt.ToString("C"));
+                swLog.WriteLine("The tax is " + TaxAmount.ToString("C") + " (" + taxRate.ToString("P") + " )");
+                swLog.WriteLine("Your total is " + TotalPrice.ToString("C"));
+                swLog.Close();
 
-
-              lstOut.Items.Add("The tax was " + TaxAmount.ToString("C") + " (" + taxRate.ToString("P") + " )");
-                lstOut.Items.Add(" Your total is " + TotalPrice.ToString("C"));
                 // changes the focus to the clear button
                 btnClear.Focus();
             }
@@ -145,6 +157,13 @@ namespace Frary_Demo_Sp2024
 
         }
         //non default event procedure
+      
+        
+        
+        
+        
+        
+        
         private void txtWidgetName_Enter(object sender, EventArgs e)
         {
             txtWidgetName.BackColor = Color.Beige;
@@ -185,10 +204,21 @@ namespace Frary_Demo_Sp2024
 
         private void rdo4Year_CheckedChanged(object sender, EventArgs e)
         {
-            if(rdo4Year.Checked)
+            if (rdo4Year.Checked)
             {
                 WarrantyType = FOUR_YEAR_WARRANTY;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DateTime d = DateTime.Now;
+            lstOut.Items.Add("D parameter gives: " + d.ToString("D"));
+            lstOut.Items.Add("d parameter gives: " + d.ToString("d"));
+            lstOut.Items.Add("T parameter gives: " + d.ToString("T"));
+            lstOut.Items.Add("t parameter gives: " + d.ToString("t"));
+            lstOut.Items.Add("G parameter gives: " + d.ToString("G"));
+            lstOut.Items.Add("g parameter gives: " + d.ToString("g"));
         }
     }
 }

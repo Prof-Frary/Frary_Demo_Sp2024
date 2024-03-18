@@ -42,6 +42,7 @@
             rdoNoWarranty = new RadioButton();
             txtQuantity = new TextBox();
             label3 = new Label();
+            button1 = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -104,7 +105,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(313, 351);
+            btnClear.Location = new Point(205, 351);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(75, 48);
             btnClear.TabIndex = 6;
@@ -114,7 +115,7 @@
             // 
             // btnQuit
             // 
-            btnQuit.Location = new Point(572, 351);
+            btnQuit.Location = new Point(338, 351);
             btnQuit.Name = "btnQuit";
             btnQuit.Size = new Size(75, 48);
             btnQuit.TabIndex = 7;
@@ -187,11 +188,22 @@
             label3.TabIndex = 9;
             label3.Text = "Quantity";
             // 
+            // button1
+            // 
+            button1.Location = new Point(487, 351);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 48);
+            button1.TabIndex = 11;
+            button1.Text = "Demo Date";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(676, 411);
+            Controls.Add(button1);
             Controls.Add(txtQuantity);
             Controls.Add(label3);
             Controls.Add(groupBox1);
@@ -228,5 +240,6 @@
         private RadioButton rdoNoWarranty;
         private TextBox txtQuantity;
         private Label label3;
+        private Button button1;
     }
 }
