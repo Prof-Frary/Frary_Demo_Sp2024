@@ -20,6 +20,7 @@ namespace Frary_Demo_Sp2024
         double noneRate = 0.0;
         string WidgetTranasctionsFile = "WidgetLog.txt";
 
+
         private void Form1_Load(object sender, EventArgs e)
         {
             rdoNoWarranty.Checked = true;
@@ -34,8 +35,6 @@ namespace Frary_Demo_Sp2024
             lstOut.Items.Clear();
             //changes the focus to the First textbox
             txtWidgetName.Focus();
-
-
         }
 
         private void btnQuit_Click(object sender, EventArgs e)

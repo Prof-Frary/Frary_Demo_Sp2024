@@ -1,0 +1,53 @@
+You bought ABC
+The price was $5.00
+The warranty type is None
+The warranty Percent is 0.00%
+ The waranty amount charged is $0.00
+The tax was $0.44 (8.75% )
+ Your total is $5.44
+You bought ABC
+The price was $5.00
+The warranty type is 2-Year
+The warranty Percent is 2.00%
+ The waranty amount charged is $0.10
+The tax was $0.45 (8.75% )
+ Your total is $5.45
+You bought ABC
+The price was $5.00
+The warranty type is 4-Year
+The warranty Percent is 5.00%
+ The waranty amount charged is $0.25
+The tax was $0.46 (8.75% )
+ Your total is $5.46
+************** Beginning of Transaction   ***********
+You bought fdgdsg
+The price was $6.00
+The warranty type is None
+The warranty Percent is 0.00%
+ The waranty amount charged is $0.00
+The tax was $0.52 (8.75% )
+ Your total is $6.53
+************** Beginning of Transaction on Monday, March 18, 2024***********
+You bought bzbd
+The price was $5.00
+The warranty type is None
+The warranty Percent is 0.00%
+ The waranty amount charged is $0.00
+The tax was $0.44 (8.75% )
+ Your total is $5.44
+************** Beginning of Transaction on 3/18/2024 11:15:02 AM***********
+You bought 3
+The price was $3.00
+The warranty type is None
+The warranty Percent is 0.00%
+ The waranty amount charged is $0.00
+The tax was $0.26 (8.75% )
+ Your total is $3.26
+************** Beginning of Transaction on 3/18/2024 11:17:08 AM***********
+You bought 56
+The price is $56.00
+The warranty type is None
+The warranty percent is 0.00%
+The waranty amount charged is $0.00
+The tax is $4.90 (8.75% )
+Your total is $60.90
