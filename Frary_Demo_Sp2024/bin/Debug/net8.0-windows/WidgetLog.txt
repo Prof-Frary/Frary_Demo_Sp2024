@@ -1,53 +1,216 @@
-You bought ABC
-The price was $5.00
-The warranty type is None
-The warranty Percent is 0.00%
- The waranty amount charged is $0.00
-The tax was $0.44 (8.75% )
- Your total is $5.44
-You bought ABC
-The price was $5.00
-The warranty type is 2-Year
-The warranty Percent is 2.00%
- The waranty amount charged is $0.10
-The tax was $0.45 (8.75% )
- Your total is $5.45
-You bought ABC
-The price was $5.00
-The warranty type is 4-Year
-The warranty Percent is 5.00%
- The waranty amount charged is $0.25
-The tax was $0.46 (8.75% )
- Your total is $5.46
-************** Beginning of Transaction   ***********
-You bought fdgdsg
-The price was $6.00
-The warranty type is None
-The warranty Percent is 0.00%
- The waranty amount charged is $0.00
-The tax was $0.52 (8.75% )
- Your total is $6.53
-************** Beginning of Transaction on Monday, March 18, 2024***********
-You bought bzbd
-The price was $5.00
-The warranty type is None
-The warranty Percent is 0.00%
- The waranty amount charged is $0.00
-The tax was $0.44 (8.75% )
- Your total is $5.44
-************** Beginning of Transaction on 3/18/2024 11:15:02 AM***********
-You bought 3
-The price was $3.00
-The warranty type is None
-The warranty Percent is 0.00%
- The waranty amount charged is $0.00
-The tax was $0.26 (8.75% )
- Your total is $3.26
-************** Beginning of Transaction on 3/18/2024 11:17:08 AM***********
-You bought 56
-The price is $56.00
+************** Beginning of Transaction on 3/20/2024 10:41:28 AM***********
+You bought abd
+The price is $5.00
 The warranty type is None
 The warranty percent is 0.00%
 The waranty amount charged is $0.00
-The tax is $4.90 (8.75% )
-Your total is $60.90
+The tax is $0.44 (8.75% )
+Your total is $5.44
+************** Beginning of Transaction on 3/20/2024 10:41:35 AM***********
+You bought abd
+The price is $5.00
+The warranty type is 2-Year
+The warranty percent is 2.00%
+The waranty amount charged is $0.10
+The tax is $0.45 (8.75% )
+Your total is $5.45
+************** Beginning of Transaction on 3/20/2024 10:56:17 AM***********
+You bought gldfjl
+The price is $34.00
+The warranty type is None
+The warranty percent is 0.00%
+The waranty amount charged is $0.00
+The tax is $2.97 (8.75% )
+Your total is $36.98
+************** Beginning of Transaction on 3/20/2024 10:56:24 AM***********
+You bought gldfjl
+The price is $34.00
+The warranty type is 2-Year
+The warranty percent is 4.00%
+The waranty amount charged is $1.36
+The tax is $3.09 (8.75% )
+Your total is $37.09
+************** Beginning of Transaction on 3/20/2024 10:56:26 AM***********
+You bought gldfjl
+The price is $34.00
+The warranty type is 2-Year
+The warranty percent is 4.00%
+The waranty amount charged is $1.36
+The tax is $3.09 (8.75% )
+Your total is $37.09
+************** Beginning of Transaction on 3/20/2024 10:56:27 AM***********
+You bought gldfjl
+The price is $34.00
+The warranty type is 2-Year
+The warranty percent is 4.00%
+The waranty amount charged is $1.36
+The tax is $3.09 (8.75% )
+Your total is $37.09
+************** Beginning of Transaction on 3/20/2024 10:56:40 AM***********
+You bought gldfjl
+The price is $34.00
+The warranty type is 4-Year
+The warranty percent is 6.00%
+The waranty amount charged is $2.04
+The tax is $3.15 (8.75% )
+Your total is $37.15
+************** Beginning of Transaction on 3/20/2024 10:57:19 AM***********
+You bought gfhfs
+The price is $100.00
+The warranty type is None
+The warranty percent is 0.00%
+The waranty amount charged is $0.00
+The tax is $8.75 (8.75% )
+Your total is $108.75
+************** Beginning of Transaction on 3/20/2024 10:57:23 AM***********
+You bought gfhfs
+The price is $100.00
+The warranty type is 2-Year
+The warranty percent is 4.50%
+The waranty amount charged is $4.50
+The tax is $9.14 (8.75% )
+Your total is $109.14
+************** Beginning of Transaction on 3/20/2024 10:57:39 AM***********
+You bought gfhfs
+The price is $100.00
+The warranty type is 4-Year
+The warranty percent is 6.50%
+The waranty amount charged is $6.50
+The tax is $9.32 (8.75% )
+Your total is $109.32
+************** Beginning of Transaction on 3/20/2024 11:22:18 AM***********
+You bought gfddgs
+The price is $5.00
+The warranty type is None
+The warranty percent is 0.00%
+The waranty amount charged is $0.00
+The tax is $0.44 (8.75% )
+Your total is $5.44
+************** Beginning of Transaction on 3/20/2024 11:22:21 AM***********
+You bought gfddgs
+The price is $5.00
+The warranty type is 2-Year
+The warranty percent is 2.00%
+The waranty amount charged is $0.10
+The tax is $0.45 (8.75% )
+Your total is $5.45
+************** Beginning of Transaction on 3/20/2024 11:23:04 AM***********
+You bought nbf
+The price is $100.00
+The warranty type is None
+The warranty percent is 0.00%
+The waranty amount charged is $0.00
+The tax is $8.75 (8.75% )
+Your total is $108.75
+************** Beginning of Transaction on 3/20/2024 11:23:11 AM***********
+You bought nbf
+The price is $100.00
+The warranty type is 2-Year
+The warranty percent is 0.00%
+The waranty amount charged is $0.00
+The tax is $8.75 (8.75% )
+Your total is $108.75
+************** Beginning of Transaction on 3/20/2024 11:23:20 AM***********
+You bought nbf
+The price is $100.00
+The warranty type is 4-Year
+The warranty percent is 0.00%
+The waranty amount charged is $0.00
+The tax is $8.75 (8.75% )
+Your total is $108.75
+************** Beginning of Transaction on 3/20/2024 11:33:57 AM***********
+You bought bgfhsf
+The price is $100.00
+The warranty type is None
+The warranty percent is 4.00%
+The waranty amount charged is $4.00
+The tax is $9.10 (8.75% )
+Your total is $109.10
+************** Beginning of Transaction on 3/20/2024 11:34:07 AM***********
+You bought bgfhsf
+The price is $100.00
+The warranty type is 2-Year
+The warranty percent is 2.00%
+The waranty amount charged is $2.00
+The tax is $8.92 (8.75% )
+Your total is $108.92
+************** Beginning of Transaction on 3/20/2024 11:34:13 AM***********
+You bought bgfhsf
+The price is $100.00
+The warranty type is 4-Year
+The warranty percent is 0.00%
+The waranty amount charged is $0.00
+The tax is $8.75 (8.75% )
+Your total is $108.75
+************** Beginning of Transaction on 3/20/2024 11:42:04 AM***********
+You bought 100
+The price is $100.00
+The warranty type is None
+The warranty percent is 0.00%
+The waranty amount charged is $0.00
+The tax is $8.75 (8.75% )
+Your total is $108.75
+************** Beginning of Transaction on 3/20/2024 11:42:08 AM***********
+You bought 100
+The price is $100.00
+The warranty type is 2-Year
+The warranty percent is 5.00%
+The waranty amount charged is $5.00
+The tax is $9.19 (8.75% )
+Your total is $109.19
+************** Beginning of Transaction on 3/20/2024 11:42:13 AM***********
+You bought 100
+The price is $100.00
+The warranty type is 4-Year
+The warranty percent is 5.60%
+The waranty amount charged is $5.60
+The tax is $9.24 (8.75% )
+Your total is $109.24
+************** Beginning of Transaction on 3/20/2024 11:47:58 AM***********
+You bought bhfxgbcv
+The price is $300.00
+The warranty type is None
+The warranty percent is 0.00%
+The waranty amount charged is $0.00
+The tax is $26.25 (8.75% )
+Your total is $326.25
+************** Beginning of Transaction on 3/20/2024 11:48:03 AM***********
+You bought bhfxgbcv
+The price is $300.00
+The warranty type is 2-Year
+The warranty percent is 5.00%
+The waranty amount charged is $15.00
+The tax is $27.56 (8.75% )
+Your total is $327.56
+************** Beginning of Transaction on 3/20/2024 11:48:10 AM***********
+You bought bhfxgbcv
+The price is $300.00
+The warranty type is 4-Year
+The warranty percent is 5.60%
+The waranty amount charged is $16.80
+The tax is $27.72 (8.75% )
+Your total is $327.72
+************** Beginning of Transaction on 3/20/2024 11:52:04 AM***********
+You bought bgfgsfd
+The price is $100.00
+The warranty type is None
+The warranty percent is 0.00%
+The waranty amount charged is $0.00
+The tax is $8.75 (8.75% )
+Your total is $108.75
+************** Beginning of Transaction on 3/20/2024 11:52:14 AM***********
+You bought dfsafsa
+The price is $100.00
+The warranty type is 2-Year
+The warranty percent is 5.00%
+The waranty amount charged is $5.00
+The tax is $9.19 (8.75% )
+Your total is $109.19
+************** Beginning of Transaction on 3/20/2024 11:52:20 AM***********
+You bought dfsafsa
+The price is $100.00
+The warranty type is 4-Year
+The warranty percent is 5.60%
+The waranty amount charged is $5.60
+The tax is $9.24 (8.75% )
+Your total is $109.24

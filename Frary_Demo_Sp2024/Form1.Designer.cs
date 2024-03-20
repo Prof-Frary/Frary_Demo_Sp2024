@@ -43,6 +43,7 @@
             txtQuantity = new TextBox();
             label3 = new Label();
             button1 = new Button();
+            OFD = new OpenFileDialog();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -67,7 +68,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(216, 128);
+            label2.Location = new Point(216, 104);
             label2.Name = "label2";
             label2.Size = new Size(74, 15);
             label2.TabIndex = 2;
@@ -75,7 +76,7 @@
             // 
             // txtWidgetPrice
             // 
-            txtWidgetPrice.Location = new Point(313, 128);
+            txtWidgetPrice.Location = new Point(313, 104);
             txtWidgetPrice.Name = "txtWidgetPrice";
             txtWidgetPrice.Size = new Size(100, 23);
             txtWidgetPrice.TabIndex = 3;
@@ -86,10 +87,11 @@
             // 
             lstOut.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lstOut.FormattingEnabled = true;
+            lstOut.HorizontalScrollbar = true;
             lstOut.ItemHeight = 25;
-            lstOut.Location = new Point(12, 191);
+            lstOut.Location = new Point(12, 166);
             lstOut.Name = "lstOut";
-            lstOut.Size = new Size(652, 154);
+            lstOut.Size = new Size(652, 179);
             lstOut.TabIndex = 4;
             lstOut.TabStop = false;
             // 
@@ -174,7 +176,7 @@
             // 
             // txtQuantity
             // 
-            txtQuantity.Location = new Point(315, 159);
+            txtQuantity.Location = new Point(313, 133);
             txtQuantity.Name = "txtQuantity";
             txtQuantity.Size = new Size(100, 23);
             txtQuantity.TabIndex = 10;
@@ -182,7 +184,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(218, 159);
+            label3.Location = new Point(216, 133);
             label3.Name = "label3";
             label3.Size = new Size(53, 15);
             label3.TabIndex = 9;
@@ -197,6 +199,10 @@
             button1.Text = "Demo Date";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            // 
+            // OFD
+            // 
+            OFD.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -241,5 +247,6 @@
         private TextBox txtQuantity;
         private Label label3;
         private Button button1;
+        private OpenFileDialog OFD;
     }
 }

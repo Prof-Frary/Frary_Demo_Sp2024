@@ -15,15 +15,58 @@ namespace Frary_Demo_Sp2024
         const string NO_WARRANTY = "None";
         const string TWO_YEAR_WARRANTY = "2-Year";
         const string FOUR_YEAR_WARRANTY = "4-Year";
-        double twoYearRate = 0.02;
-        double fourYearRate = 0.05;
-        double noneRate = 0.0;
+        double twoYearRate ;
+        double fourYearRate;
+        double noneRate;
         string WidgetTranasctionsFile = "WidgetLog.txt";
-
+        string WidgetConfigFile = "WidgetCFG.txt";
 
         private void Form1_Load(object sender, EventArgs e)
         {
             rdoNoWarranty.Checked = true;
+            // this is temporary intil we figure out a way to change variables
+            // in program
+            //  outputConfig();
+            bool fileGood = false;
+            do
+            {
+                try
+                {
+                    StreamReader sr = File.OpenText(WidgetConfigFile);
+                    // this stops the loop since we know we have a good file
+                    fileGood = true;
+                    string temp = "";
+                    while (temp == "") {
+                        temp = sr.ReadLine();
+                    }                    
+                    noneRate = double.Parse(temp);
+                    temp = "";
+                    while (temp == "")
+                    {
+                        temp = sr.ReadLine();
+                    }
+                    twoYearRate = double.Parse(temp);
+                    temp = "";
+                    while (temp == "")
+                    {
+                        temp = sr.ReadLine();
+                    }
+                    fourYearRate = double.Parse(temp);
+                    sr.Close();
+                }
+                catch (FileNotFoundException ex)
+                {
+                    lstOut.Items.Add(ex.Message);
+                    OFD.FileName = WidgetConfigFile;
+                    OFD.Filter = "Text Files|*.txt|All Files|*.*";
+                    OFD.ShowDialog(this);
+                    WidgetConfigFile = OFD.FileName;
+
+                }
+            } while (!fileGood); 
+
+
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -65,7 +108,8 @@ namespace Frary_Demo_Sp2024
             double taxRate = .0875;
             //ICA 4
             bool wPriceValid, QuantityValid;
-
+            StreamWriter swLog;
+           
             //input 
 
             WidgetName = txtWidgetName.Text;
@@ -131,9 +175,9 @@ namespace Frary_Demo_Sp2024
                 lstOut.Items.Add("The warranty amount charged is " + WarrantyAmt.ToString("C"));
                 lstOut.Items.Add("The tax is " + TaxAmount.ToString("C") + " (" + taxRate.ToString("P") + " )");
                 lstOut.Items.Add("Your total is " + TotalPrice.ToString("C"));
-                StreamWriter swLog;
-                swLog = File.AppendText(WidgetTranasctionsFile);
+                
                 DateTime d = DateTime.Now;
+                swLog = File.AppendText(WidgetTranasctionsFile);
                 swLog.WriteLine("************** Beginning of Transaction on " +
                         d.ToString("G") + "***********");
                 swLog.WriteLine("You bought " + WidgetName);
@@ -156,13 +200,8 @@ namespace Frary_Demo_Sp2024
 
         }
         //non default event procedure
-      
-        
-        
-        
-        
-        
-        
+
+
         private void txtWidgetName_Enter(object sender, EventArgs e)
         {
             txtWidgetName.BackColor = Color.Beige;
@@ -218,6 +257,16 @@ namespace Frary_Demo_Sp2024
             lstOut.Items.Add("t parameter gives: " + d.ToString("t"));
             lstOut.Items.Add("G parameter gives: " + d.ToString("G"));
             lstOut.Items.Add("g parameter gives: " + d.ToString("g"));
+        }
+
+        void outputConfig()
+        {
+            StreamWriter sw = File.CreateText(WidgetConfigFile);
+            sw.WriteLine(noneRate);
+            sw.WriteLine(twoYearRate);
+            sw.WriteLine(fourYearRate);
+            sw.Close();
+
         }
     }
 }
