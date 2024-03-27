@@ -257,6 +257,7 @@ namespace Frary_Demo_Sp2024
             lstOut.Items.Add("t parameter gives: " + d.ToString("t"));
             lstOut.Items.Add("G parameter gives: " + d.ToString("G"));
             lstOut.Items.Add("g parameter gives: " + d.ToString("g"));
+            lstOut.Items.Add(btnCalc.ToString());
         }
 
         void outputConfig()
