@@ -8,6 +8,7 @@ namespace Frary_Demo_Sp2024
         public Form1()
         {
             InitializeComponent();
+
         }
 
         // these are class level variables
@@ -15,11 +16,15 @@ namespace Frary_Demo_Sp2024
         const string NO_WARRANTY = "None";
         const string TWO_YEAR_WARRANTY = "2-Year";
         const string FOUR_YEAR_WARRANTY = "4-Year";
-        double twoYearRate ;
+        /*
+        double twoYearRate;
         double fourYearRate;
         double noneRate;
+        */
         string WidgetTranasctionsFile = "WidgetLog.txt";
         string WidgetConfigFile = "WidgetCFG.txt";
+        Form2 sf;
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -27,6 +32,7 @@ namespace Frary_Demo_Sp2024
             // this is temporary intil we figure out a way to change variables
             // in program
             //  outputConfig();
+            sf = new Form2();
             bool fileGood = false;
             do
             {
@@ -36,22 +42,27 @@ namespace Frary_Demo_Sp2024
                     // this stops the loop since we know we have a good file
                     fileGood = true;
                     string temp = "";
-                    while (temp == "") {
+                    while (temp == "")
+                    {
                         temp = sr.ReadLine();
-                    }                    
-                    noneRate = double.Parse(temp);
+                    }
+                   // noneRate = double.Parse(temp);
+                   sf.NoWarranty = double.Parse(temp);
                     temp = "";
                     while (temp == "")
                     {
                         temp = sr.ReadLine();
                     }
-                    twoYearRate = double.Parse(temp);
+                 //   twoYearRate = double.Parse(temp);
+                    sf.TwoYearWarranty = double.Parse(temp);
                     temp = "";
                     while (temp == "")
                     {
                         temp = sr.ReadLine();
                     }
-                    fourYearRate = double.Parse(temp);
+                    //fourYearRate = double.Parse(temp);
+                    sf.FourYearWarranty = double.Parse(temp);
+
                     sr.Close();
                 }
                 catch (FileNotFoundException ex)
@@ -63,9 +74,9 @@ namespace Frary_Demo_Sp2024
                     WidgetConfigFile = OFD.FileName;
 
                 }
-            } while (!fileGood); 
+            } while (!fileGood);
 
-
+           
 
         }
 
@@ -109,7 +120,7 @@ namespace Frary_Demo_Sp2024
             //ICA 4
             bool wPriceValid, QuantityValid;
             StreamWriter swLog;
-           
+
             //input 
 
             WidgetName = txtWidgetName.Text;
@@ -127,13 +138,13 @@ namespace Frary_Demo_Sp2024
                 switch (WarrantyType)
                 {
                     case NO_WARRANTY:
-                        WarrantyPct = noneRate;
+                        WarrantyPct = sf.NoWarranty;
                         break;
                     case TWO_YEAR_WARRANTY:
-                        WarrantyPct = twoYearRate;
+                        WarrantyPct = sf.TwoYearWarranty;
                         break;
                     case FOUR_YEAR_WARRANTY:
-                        WarrantyPct = fourYearRate;
+                        WarrantyPct = sf.FourYearWarranty;
                         break;
                     default:
                         lstOut.Items.Add(" Switch default - this shouldn't happen!!!");
@@ -175,7 +186,7 @@ namespace Frary_Demo_Sp2024
                 lstOut.Items.Add("The warranty amount charged is " + WarrantyAmt.ToString("C"));
                 lstOut.Items.Add("The tax is " + TaxAmount.ToString("C") + " (" + taxRate.ToString("P") + " )");
                 lstOut.Items.Add("Your total is " + TotalPrice.ToString("C"));
-                
+
                 DateTime d = DateTime.Now;
                 swLog = File.AppendText(WidgetTranasctionsFile);
                 swLog.WriteLine("************** Beginning of Transaction on " +
@@ -260,14 +271,14 @@ namespace Frary_Demo_Sp2024
             lstOut.Items.Add(btnCalc.ToString());
         }
 
-        void outputConfig()
-        {
-            StreamWriter sw = File.CreateText(WidgetConfigFile);
-            sw.WriteLine(noneRate);
-            sw.WriteLine(twoYearRate);
-            sw.WriteLine(fourYearRate);
-            sw.Close();
+       
 
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           sf.txtNone.Text = (sf.NoWarranty * 100).ToString("N2");
+            sf.txt2Year.Text = (sf.TwoYearWarranty * 100).ToString("N2");
+            sf.txt4Year.Text = (sf.FourYearWarranty * 100).ToString("N2");
+            sf.ShowDialog();
         }
     }
 }

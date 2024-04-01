@@ -44,13 +44,16 @@
             label3 = new Label();
             button1 = new Button();
             OFD = new OpenFileDialog();
+            menuStrip1 = new MenuStrip();
+            settingsToolStripMenuItem = new ToolStripMenuItem();
             groupBox1.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(218, 78);
+            label1.Location = new Point(218, 107);
             label1.Name = "label1";
             label1.Size = new Size(80, 15);
             label1.TabIndex = 0;
@@ -58,7 +61,7 @@
             // 
             // txtWidgetName
             // 
-            txtWidgetName.Location = new Point(313, 75);
+            txtWidgetName.Location = new Point(313, 104);
             txtWidgetName.Name = "txtWidgetName";
             txtWidgetName.Size = new Size(100, 23);
             txtWidgetName.TabIndex = 1;
@@ -68,7 +71,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(216, 104);
+            label2.Location = new Point(216, 133);
             label2.Name = "label2";
             label2.Size = new Size(74, 15);
             label2.TabIndex = 2;
@@ -76,7 +79,7 @@
             // 
             // txtWidgetPrice
             // 
-            txtWidgetPrice.Location = new Point(313, 104);
+            txtWidgetPrice.Location = new Point(313, 133);
             txtWidgetPrice.Name = "txtWidgetPrice";
             txtWidgetPrice.Size = new Size(100, 23);
             txtWidgetPrice.TabIndex = 3;
@@ -89,7 +92,7 @@
             lstOut.FormattingEnabled = true;
             lstOut.HorizontalScrollbar = true;
             lstOut.ItemHeight = 25;
-            lstOut.Location = new Point(12, 166);
+            lstOut.Location = new Point(12, 195);
             lstOut.Name = "lstOut";
             lstOut.Size = new Size(652, 179);
             lstOut.TabIndex = 4;
@@ -97,7 +100,7 @@
             // 
             // btnCalc
             // 
-            btnCalc.Location = new Point(57, 351);
+            btnCalc.Location = new Point(57, 380);
             btnCalc.Name = "btnCalc";
             btnCalc.Size = new Size(75, 48);
             btnCalc.TabIndex = 5;
@@ -107,7 +110,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(205, 351);
+            btnClear.Location = new Point(205, 380);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(75, 48);
             btnClear.TabIndex = 6;
@@ -117,7 +120,7 @@
             // 
             // btnQuit
             // 
-            btnQuit.Location = new Point(338, 351);
+            btnQuit.Location = new Point(338, 380);
             btnQuit.Name = "btnQuit";
             btnQuit.Size = new Size(75, 48);
             btnQuit.TabIndex = 7;
@@ -130,7 +133,7 @@
             groupBox1.Controls.Add(rdo4Year);
             groupBox1.Controls.Add(rdo2Year);
             groupBox1.Controls.Add(rdoNoWarranty);
-            groupBox1.Location = new Point(12, 12);
+            groupBox1.Location = new Point(12, 41);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(652, 57);
             groupBox1.TabIndex = 8;
@@ -176,7 +179,7 @@
             // 
             // txtQuantity
             // 
-            txtQuantity.Location = new Point(313, 133);
+            txtQuantity.Location = new Point(313, 162);
             txtQuantity.Name = "txtQuantity";
             txtQuantity.Size = new Size(100, 23);
             txtQuantity.TabIndex = 10;
@@ -184,7 +187,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(216, 133);
+            label3.Location = new Point(216, 162);
             label3.Name = "label3";
             label3.Size = new Size(53, 15);
             label3.TabIndex = 9;
@@ -192,7 +195,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(487, 351);
+            button1.Location = new Point(487, 380);
             button1.Name = "button1";
             button1.Size = new Size(75, 48);
             button1.TabIndex = 11;
@@ -204,11 +207,27 @@
             // 
             OFD.FileName = "openFileDialog1";
             // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { settingsToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(676, 24);
+            menuStrip1.TabIndex = 12;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            settingsToolStripMenuItem.Size = new Size(61, 20);
+            settingsToolStripMenuItem.Text = "Settings";
+            settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(676, 411);
+            ClientSize = new Size(676, 434);
             Controls.Add(button1);
             Controls.Add(txtQuantity);
             Controls.Add(label3);
@@ -221,11 +240,15 @@
             Controls.Add(label2);
             Controls.Add(txtWidgetName);
             Controls.Add(label1);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "Frary Demo SP 24";
             Load += Form1_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -248,5 +271,7 @@
         private Label label3;
         private Button button1;
         private OpenFileDialog OFD;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem settingsToolStripMenuItem;
     }
 }

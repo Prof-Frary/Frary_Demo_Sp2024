@@ -150,14 +150,14 @@
         #endregion
 
         private Label label1;
-        private TextBox txtNone;
         private Label label2;
-        private TextBox txt2Year;
         private Label label3;
-        private TextBox txt4Year;
         private Button btnSaveReturn;
         private Label label4;
         private Label label5;
         private Label label6;
+        public TextBox txtNone;
+        public TextBox txt2Year;
+        public TextBox txt4Year;
     }
 }

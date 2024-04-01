@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +18,12 @@ namespace Frary_Demo_Sp2024
             InitializeComponent();
         }
 
+        //property Nowarranty.. ALl setting of the property goes through here
+        public double NoWarranty {  get; set; } 
+
+        public double TwoYearWarranty { get; set; }
+
+        public double FourYearWarranty { get; set; }
         private void Form2_Load(object sender, EventArgs e)
         {
 
