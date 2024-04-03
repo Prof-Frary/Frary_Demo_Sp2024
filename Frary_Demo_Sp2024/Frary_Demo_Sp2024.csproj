@@ -12,8 +12,4 @@
     <Content Include="bin\Debug\net8.0-windows\cfg.txt" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="bin\Debug\net8.0-windows\CIS 152 - Week 07 - Files.docx" />
-  </ItemGroup>
-
 </Project>

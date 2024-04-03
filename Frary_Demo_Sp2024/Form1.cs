@@ -22,7 +22,7 @@ namespace Frary_Demo_Sp2024
         double noneRate;
         */
         string WidgetTranasctionsFile = "WidgetLog.txt";
-        string WidgetConfigFile = "WidgetCFG.txt";
+       
         Form2 sf;
 
 
@@ -38,7 +38,7 @@ namespace Frary_Demo_Sp2024
             {
                 try
                 {
-                    StreamReader sr = File.OpenText(WidgetConfigFile);
+                    StreamReader sr = File.OpenText(sf.WidgetConfigFile);
                     // this stops the loop since we know we have a good file
                     fileGood = true;
                     string temp = "";
@@ -68,10 +68,10 @@ namespace Frary_Demo_Sp2024
                 catch (FileNotFoundException ex)
                 {
                     lstOut.Items.Add(ex.Message);
-                    OFD.FileName = WidgetConfigFile;
+                    OFD.FileName = sf.WidgetConfigFile;
                     OFD.Filter = "Text Files|*.txt|All Files|*.*";
                     OFD.ShowDialog(this);
-                    WidgetConfigFile = OFD.FileName;
+                    sf.WidgetConfigFile = OFD.FileName;
 
                 }
             } while (!fileGood);
@@ -261,6 +261,10 @@ namespace Frary_Demo_Sp2024
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int i = 0;
+            i++;
+            lstOut.Items.Add(" i = ");
+
             DateTime d = DateTime.Now;
             lstOut.Items.Add("D parameter gives: " + d.ToString("D"));
             lstOut.Items.Add("d parameter gives: " + d.ToString("d"));

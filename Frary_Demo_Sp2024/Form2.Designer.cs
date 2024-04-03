@@ -96,7 +96,7 @@
             btnSaveReturn.TabIndex = 6;
             btnSaveReturn.Text = "&Save Values and Return";
             btnSaveReturn.UseVisualStyleBackColor = true;
-            btnSaveReturn.Click += button1_Click;
+            btnSaveReturn.Click += btnSaveReturn_Click;
             // 
             // label4
             // 

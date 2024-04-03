@@ -214,3 +214,91 @@ The warranty percent is 5.60%
 The waranty amount charged is $5.60
 The tax is $9.24 (8.75% )
 Your total is $109.24
+************** Beginning of Transaction on 4/3/2024 11:01:14 AM***********
+You bought fdsjlsda
+The price is $100.00
+The warranty type is 2-Year
+The warranty percent is 4.00%
+The waranty amount charged is $4.00
+The tax is $9.10 (8.75% )
+Your total is $109.10
+************** Beginning of Transaction on 4/3/2024 11:01:45 AM***********
+You bought fdsjlsda
+The price is $100.00
+The warranty type is 2-Year
+The warranty percent is 10.00%
+The waranty amount charged is $10.00
+The tax is $9.62 (8.75% )
+Your total is $109.62
+************** Beginning of Transaction on 4/3/2024 11:19:08 AM***********
+You bought fldsjfld
+The price is $100.00
+The warranty type is None
+The warranty percent is 0.00%
+The waranty amount charged is $0.00
+The tax is $8.75 (8.75% )
+Your total is $108.75
+************** Beginning of Transaction on 4/3/2024 11:19:14 AM***********
+You bought fldsjfld
+The price is $100.00
+The warranty type is 2-Year
+The warranty percent is 4.00%
+The waranty amount charged is $4.00
+The tax is $9.10 (8.75% )
+Your total is $109.10
+************** Beginning of Transaction on 4/3/2024 11:19:20 AM***********
+You bought fldsjfld
+The price is $100.00
+The warranty type is 4-Year
+The warranty percent is 6.00%
+The waranty amount charged is $6.00
+The tax is $9.27 (8.75% )
+Your total is $109.28
+************** Beginning of Transaction on 4/3/2024 11:19:36 AM***********
+You bought fldsjfld
+The price is $100.00
+The warranty type is 4-Year
+The warranty percent is 7.00%
+The waranty amount charged is $7.00
+The tax is $9.36 (8.75% )
+Your total is $109.36
+************** Beginning of Transaction on 4/3/2024 11:19:40 AM***********
+You bought fldsjfld
+The price is $100.00
+The warranty type is 2-Year
+The warranty percent is 5.00%
+The waranty amount charged is $5.00
+The tax is $9.19 (8.75% )
+Your total is $109.19
+************** Beginning of Transaction on 4/3/2024 11:19:45 AM***********
+You bought fldsjfld
+The price is $100.00
+The warranty type is None
+The warranty percent is 1.00%
+The waranty amount charged is $1.00
+The tax is $8.84 (8.75% )
+Your total is $108.84
+************** Beginning of Transaction on 4/3/2024 11:20:14 AM***********
+You bought dfsafd
+The price is $100.00
+The warranty type is None
+The warranty percent is 1.00%
+The waranty amount charged is $1.00
+The tax is $8.84 (8.75% )
+Your total is $108.84
+************** Beginning of Transaction on 4/3/2024 11:20:31 AM***********
+You bought dfsafd
+The price is $100.00
+The warranty type is 2-Year
+The warranty percent is 5.00%
+The waranty amount charged is $5.00
+The tax is $9.19 (8.75% )
+Your total is $109.19
+************** Beginning of Transaction on 4/3/2024 11:20:51 AM***********
+You bought dfsafd
+The price is $100.00
+The warranty type is 4-Year
+The warranty percent is 7.00%
+The waranty amount charged is $7.00
+The tax is $9.36 (8.75% )
+Your total is $109.36
