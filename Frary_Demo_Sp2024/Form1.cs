@@ -33,6 +33,7 @@ namespace Frary_Demo_Sp2024
             // in program
             //  outputConfig();
             sf = new Form2();
+            // read file ICA 9
             bool fileGood = false;
             do
             {
@@ -47,21 +48,21 @@ namespace Frary_Demo_Sp2024
                         temp = sr.ReadLine();
                     }
                    // noneRate = double.Parse(temp);
-                   sf.NoWarranty = double.Parse(temp);
+                   sf.NoWarranty = double.Parse(temp);// Changing of variable to property ICA 10
                     temp = "";
                     while (temp == "")
                     {
                         temp = sr.ReadLine();
                     }
                  //   twoYearRate = double.Parse(temp);
-                    sf.TwoYearWarranty = double.Parse(temp);
+                    sf.TwoYearWarranty = double.Parse(temp); // Changing of variable to property ICA 10
                     temp = "";
                     while (temp == "")
                     {
                         temp = sr.ReadLine();
                     }
                     //fourYearRate = double.Parse(temp);
-                    sf.FourYearWarranty = double.Parse(temp);
+                    sf.FourYearWarranty = double.Parse(temp);// Changing of variable to property ICA 10
 
                     sr.Close();
                 }
@@ -71,7 +72,7 @@ namespace Frary_Demo_Sp2024
                     OFD.FileName = sf.WidgetConfigFile;
                     OFD.Filter = "Text Files|*.txt|All Files|*.*";
                     OFD.ShowDialog(this);
-                    sf.WidgetConfigFile = OFD.FileName;
+                    sf.WidgetConfigFile = OFD.FileName;// Changing ofconfig file variable to second form variable ICA 11
 
                 }
             } while (!fileGood);
@@ -138,13 +139,14 @@ namespace Frary_Demo_Sp2024
                 switch (WarrantyType)
                 {
                     case NO_WARRANTY:
-                        WarrantyPct = sf.NoWarranty;
+                        
+                        WarrantyPct = sf.NoWarranty;// Changing of variable to property ICA 10
                         break;
                     case TWO_YEAR_WARRANTY:
-                        WarrantyPct = sf.TwoYearWarranty;
+                        WarrantyPct = sf.TwoYearWarranty; // Changing of variable to property ICA 10
                         break;
                     case FOUR_YEAR_WARRANTY:
-                        WarrantyPct = sf.FourYearWarranty;
+                        WarrantyPct = sf.FourYearWarranty; // Changing of variable to property ICA 10
                         break;
                     default:
                         lstOut.Items.Add(" Switch default - this shouldn't happen!!!");
@@ -279,9 +281,11 @@ namespace Frary_Demo_Sp2024
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //ICA 11
            sf.txtNone.Text = (sf.NoWarranty * 100).ToString("N2");
             sf.txt2Year.Text = (sf.TwoYearWarranty * 100).ToString("N2");
             sf.txt4Year.Text = (sf.FourYearWarranty * 100).ToString("N2");
+            // ICA 10
             sf.ShowDialog();
         }
     }

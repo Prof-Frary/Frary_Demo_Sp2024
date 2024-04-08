@@ -17,6 +17,8 @@ namespace Frary_Demo_Sp2024
         {
             InitializeComponent();
         }
+
+        //ICA 10
         public string WidgetConfigFile = "WidgetCFG.txt";
         //property Nowarranty.. ALl setting of the property goes through here
         public double NoWarranty { get; set; }
@@ -31,6 +33,7 @@ namespace Frary_Demo_Sp2024
 
         private void btnSaveReturn_Click(object sender, EventArgs e)
         {
+            // read variables from text boxes to properties - ICA 10
             bool noneValid, TwoValid, FourValid;
             // cant use a property as an out value so put it in a temporary value first
             double temp0, temp2, temp4; 
@@ -47,6 +50,7 @@ namespace Frary_Demo_Sp2024
                 TwoYearWarranty = temp2;
                 FourYearWarranty = temp4;
 
+                // write out properties to file ICA 11
                 // save values to the file
                 StreamWriter sw = File.CreateText(WidgetConfigFile);
                 // the write must happen in the same order as the read!!!
@@ -55,6 +59,8 @@ namespace Frary_Demo_Sp2024
                 sw.WriteLine(FourYearWarranty.ToString("N"));
                
                 sw.Close();
+
+                // ICA 10
                 this.Hide();
 
             }
