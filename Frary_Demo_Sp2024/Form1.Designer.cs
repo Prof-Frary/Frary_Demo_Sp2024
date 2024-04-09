@@ -46,6 +46,7 @@
             OFD = new OpenFileDialog();
             menuStrip1 = new MenuStrip();
             settingsToolStripMenuItem = new ToolStripMenuItem();
+            btnLogEntries = new Button();
             groupBox1.SuspendLayout();
             menuStrip1.SuspendLayout();
             SuspendLayout();
@@ -195,7 +196,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(487, 380);
+            button1.Location = new Point(572, 380);
             button1.Name = "button1";
             button1.Size = new Size(75, 48);
             button1.TabIndex = 11;
@@ -223,11 +224,22 @@
             settingsToolStripMenuItem.Text = "Settings";
             settingsToolStripMenuItem.Click += settingsToolStripMenuItem_Click;
             // 
+            // btnLogEntries
+            // 
+            btnLogEntries.Location = new Point(467, 380);
+            btnLogEntries.Name = "btnLogEntries";
+            btnLogEntries.Size = new Size(75, 48);
+            btnLogEntries.TabIndex = 13;
+            btnLogEntries.Text = "&Log Entries";
+            btnLogEntries.UseVisualStyleBackColor = true;
+            btnLogEntries.Click += btnLogEntries_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(676, 434);
+            Controls.Add(btnLogEntries);
             Controls.Add(button1);
             Controls.Add(txtQuantity);
             Controls.Add(label3);
@@ -273,5 +285,6 @@
         private OpenFileDialog OFD;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem settingsToolStripMenuItem;
+        private Button btnLogEntries;
     }
 }

@@ -16,13 +16,17 @@ namespace Frary_Demo_Sp2024
         const string NO_WARRANTY = "None";
         const string TWO_YEAR_WARRANTY = "2-Year";
         const string FOUR_YEAR_WARRANTY = "4-Year";
+
+        //Create an array of strings for the log file entries
+        const int MAX_ENTRIES = 2000;
+        string[] LogEntries = new string[MAX_ENTRIES];
         /*
         double twoYearRate;
         double fourYearRate;
         double noneRate;
         */
         string WidgetTranasctionsFile = "WidgetLog.txt";
-       
+
         Form2 sf;
 
 
@@ -47,14 +51,14 @@ namespace Frary_Demo_Sp2024
                     {
                         temp = sr.ReadLine();
                     }
-                   // noneRate = double.Parse(temp);
-                   sf.NoWarranty = double.Parse(temp);// Changing of variable to property ICA 10
+                    // noneRate = double.Parse(temp);
+                    sf.NoWarranty = double.Parse(temp);// Changing of variable to property ICA 10
                     temp = "";
                     while (temp == "")
                     {
                         temp = sr.ReadLine();
                     }
-                 //   twoYearRate = double.Parse(temp);
+                    //   twoYearRate = double.Parse(temp);
                     sf.TwoYearWarranty = double.Parse(temp); // Changing of variable to property ICA 10
                     temp = "";
                     while (temp == "")
@@ -77,7 +81,7 @@ namespace Frary_Demo_Sp2024
                 }
             } while (!fileGood);
 
-           
+
 
         }
 
@@ -139,7 +143,7 @@ namespace Frary_Demo_Sp2024
                 switch (WarrantyType)
                 {
                     case NO_WARRANTY:
-                        
+
                         WarrantyPct = sf.NoWarranty;// Changing of variable to property ICA 10
                         break;
                     case TWO_YEAR_WARRANTY:
@@ -277,16 +281,29 @@ namespace Frary_Demo_Sp2024
             lstOut.Items.Add(btnCalc.ToString());
         }
 
-       
+
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //ICA 11
-           sf.txtNone.Text = (sf.NoWarranty * 100).ToString("N2");
+            sf.txtNone.Text = (sf.NoWarranty * 100).ToString("N2");
             sf.txt2Year.Text = (sf.TwoYearWarranty * 100).ToString("N2");
             sf.txt4Year.Text = (sf.FourYearWarranty * 100).ToString("N2");
             // ICA 10
             sf.ShowDialog();
+        }
+
+        private void btnLogEntries_Click(object sender, EventArgs e)
+        {
+            StreamReader sr = File.OpenText(WidgetTranasctionsFile);
+            int numEntries = 0;
+            while (!sr.EndOfStream)
+            {
+                LogEntries[numEntries] = sr.ReadLine();
+                numEntries++;
+            }
+            sr.Close();
+
         }
     }
 }
