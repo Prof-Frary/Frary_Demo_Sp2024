@@ -1,3 +1,4 @@
+using Microsoft.VisualBasic.Logging;
 using System.Diagnostics.Eventing.Reader;
 using System.Windows.Forms.Design;
 
@@ -125,7 +126,7 @@ namespace Frary_Demo_Sp2024
             double taxRate = .0875;
             //ICA 4
             bool wPriceValid, QuantityValid;
-            StreamWriter swLog;
+          
 
             //input 
 
@@ -154,7 +155,7 @@ namespace Frary_Demo_Sp2024
                         WarrantyPct = sf.FourYearWarranty; // Changing of variable to property ICA 10
                         break;
                     default:
-                        lstOut.Items.Add(" Switch default - this shouldn't happen!!!");
+                        OutputData(" Switch default - this shouldn't happen!!!", LISTBOX);
                         break;
                 }
 
@@ -184,41 +185,35 @@ namespace Frary_Demo_Sp2024
                 WarrantyAmt = WidgetPrice * WarrantyPct;
                 TaxAmount = (WidgetPrice + WarrantyAmt) * taxRate;
                 TotalPrice = WidgetPrice + TaxAmount;
+               
+                DateTime d = DateTime.Now;
+
+              OutputData("************** Beginning of Transaction on " +
+                        d.ToString("G") + "***********", LOGFILE);
+
 
                 //output
-                lstOut.Items.Add("You bought " + WidgetName);
-                lstOut.Items.Add("The price is " + WidgetPrice.ToString("C"));
-                lstOut.Items.Add("The warranty type is " + WarrantyType);
-                lstOut.Items.Add("The warranty percent is " + WarrantyPct.ToString("P"));
-                lstOut.Items.Add("The warranty amount charged is " + WarrantyAmt.ToString("C"));
-                lstOut.Items.Add("The tax is " + TaxAmount.ToString("C") + " (" + taxRate.ToString("P") + " )");
-                lstOut.Items.Add("Your total is " + TotalPrice.ToString("C"));
+                OutputData("You bought " + WidgetName, BOTH);
+                OutputData("The price is " + WidgetPrice.ToString("C"), BOTH);
+                OutputData("The warranty type is " + WarrantyType, BOTH);
+                OutputData("The warranty percent is " + WarrantyPct.ToString("P"), BOTH);
+                OutputData("The warranty amount charged is " + WarrantyAmt.ToString("C"), BOTH);
+                OutputData("The tax is " + TaxAmount.ToString("C") + " (" + taxRate.ToString("P") + " )", BOTH);
+                OutputData("Your total is " + TotalPrice.ToString("C"), BOTH) ;
 
-                DateTime d = DateTime.Now;
-                swLog = File.AppendText(WidgetTranasctionsFile);
-                swLog.WriteLine("************** Beginning of Transaction on " +
-                        d.ToString("G") + "***********");
-                swLog.WriteLine("You bought " + WidgetName);
-                swLog.WriteLine("The price is " + WidgetPrice.ToString("C"));
-                swLog.WriteLine("The warranty type is " + WarrantyType);
-                swLog.WriteLine("The warranty percent is " + WarrantyPct.ToString("P"));
-                swLog.WriteLine("The waranty amount charged is " + WarrantyAmt.ToString("C"));
-                swLog.WriteLine("The tax is " + TaxAmount.ToString("C") + " (" + taxRate.ToString("P") + " )");
-                swLog.WriteLine("Your total is " + TotalPrice.ToString("C"));
-                swLog.Close();
+              
 
                 // changes the focus to the clear button
                 btnClear.Focus();
             }
             else  // Error processing - ica 5
             {
-                lstOut.Items.Add("The Widget Price entered is not valid");
+                OutputData("The Widget Price entered is not valid", LISTBOX);
             }
             // in most cases you should have nothing down here
 
         }
         //non default event procedure
-
 
         private void txtWidgetName_Enter(object sender, EventArgs e)
         {
@@ -323,6 +318,26 @@ namespace Frary_Demo_Sp2024
                     }
                 }
             }
+
+        }
+
+        const int NO_OUTPUT = 0;
+        const int LOGFILE = 1;
+        const int LISTBOX = 2;
+        const int BOTH = 3;
+        private void OutputData(string msg, int where)
+        {
+            StreamWriter swLog;
+            if (where == LISTBOX || where == BOTH) {
+                lstOut.Items.Add(msg);
+            }
+            if (where == LOGFILE || where == BOTH)
+            {
+                swLog = File.AppendText(WidgetTranasctionsFile);
+                swLog.WriteLine(msg);
+                swLog.Close();
+            }
+
 
         }
     }
