@@ -29,6 +29,7 @@ namespace Frary_Demo_Sp2024
 
         Form2 sf;
 
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -295,14 +296,33 @@ namespace Frary_Demo_Sp2024
 
         private void btnLogEntries_Click(object sender, EventArgs e)
         {
+            //open widget file to read it
             StreamReader sr = File.OpenText(WidgetTranasctionsFile);
+            // declare a variable to keep track of how many entries are reead in
             int numEntries = 0;
+            // read the file til you get to the end
             while (!sr.EndOfStream)
             {
+                // put the current line into the current log Entry
                 LogEntries[numEntries] = sr.ReadLine();
+                // updates number of log entries
                 numEntries++;
             }
             sr.Close();
+
+            // loop through all the LogEntries
+            for (int i = 0; i < numEntries; i++)
+            {
+                // if the current log entry has the warranty type in the text
+                if (LogEntries[i].IndexOf(WarrantyType) != -1)
+                {
+                    // loop through that tranasction and put each line in the listbox
+                    for (int j = i - 3; j <= i + 4; j++)
+                    {
+                        lstOut.Items.Add(LogEntries[j]);
+                    }
+                }
+            }
 
         }
     }
