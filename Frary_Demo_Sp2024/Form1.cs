@@ -96,6 +96,7 @@ namespace Frary_Demo_Sp2024
             lstOut.Items.Clear();
             //changes the focus to the First textbox
             txtWidgetName.Focus();
+            rdoNoWarranty.Checked = true;
         }
 
         private void btnQuit_Click(object sender, EventArgs e)
